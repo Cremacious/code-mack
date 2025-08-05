@@ -50,7 +50,7 @@ export default function Home() {
   }, [projects.length]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-300 via-green-400 to-green-500 relative overflow-hidden">
+    <div className="min-h-screen  relative overflow-hidden">
       {/* Pop Art Background Pattern */}
 
       {/* Hero Section */}
