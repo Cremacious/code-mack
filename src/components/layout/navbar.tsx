@@ -32,8 +32,9 @@ export function Navbar() {
       )}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#" className="text-lg font-bold text-white tracking-tight hover:text-white/80 transition-colors">
-          Code://Mack
+        <a href="#" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+          <span className="text-emerald-300 font-bold text-base font-mono">&lt;/&gt;</span>
+          <span className="text-lg font-bold text-white tracking-tight">Code://Mack</span>
         </a>
 
         <nav className="hidden md:flex items-center gap-1">
