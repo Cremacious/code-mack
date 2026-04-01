@@ -53,12 +53,6 @@ export function Hero() {
             Get a Quote
           </a>
         </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white">
-          <span className="text-sm font-bold tracking-widest uppercase">Scroll</span>
-          <ArrowDown className="w-5 h-5 animate-bounce" />
-        </div>
       </div>
     </section>
   );

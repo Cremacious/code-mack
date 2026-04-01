@@ -26,12 +26,6 @@ const COMPARISON = [
     wix: 'sometimes',
   },
   {
-    feature: 'Stripe / payment integration',
-    codeMack: true,
-    squarespace: 'limited',
-    wix: 'limited',
-  },
-  {
     feature: 'Custom web app support',
     codeMack: true,
     squarespace: false,
@@ -77,7 +71,7 @@ export function Why() {
         </div>
 
         {/* Desktop table */}
-        <div className="hidden md:block glass-card rounded-3xl overflow-hidden">
+        <div className="hidden md:block rounded-3xl overflow-hidden bg-black/20 border border-white/10">
           {/* Table header */}
           <div className="grid grid-cols-4 border-b border-white/10">
             <div className="p-5 col-span-1" />
@@ -97,13 +91,13 @@ export function Why() {
             <div
               key={feature}
               className={`grid grid-cols-4 border-b border-white/5 last:border-0 ${
-                i % 2 === 0 ? 'bg-white/0' : 'bg-white/3'
+                i % 2 === 0 ? 'bg-white/0' : 'bg-black/15'
               }`}
             >
               <div className="p-4 pl-6 flex items-center">
                 <p className=" text-white/90">{feature}</p>
               </div>
-              <div className="p-4 flex items-center justify-center border-l border-white/10 bg-emerald-400/5">
+              <div className="p-4 flex items-center justify-center border-l border-white/10 bg-emerald-400/10">
                 <Cell value={codeMack} />
               </div>
               <div className="p-4 flex items-center justify-center border-l border-white/10">
@@ -119,18 +113,18 @@ export function Why() {
         {/* Mobile card stack */}
         <div className="md:hidden space-y-3">
           {COMPARISON.map(({ feature, codeMack, squarespace, wix }) => (
-            <div key={feature} className="glass-card rounded-2xl p-5">
+            <div key={feature} className="rounded-2xl p-5 bg-black/25 border border-white/10">
               <p className="text-sm font-semibold text-white mb-4">{feature}</p>
               <div className="grid grid-cols-3 gap-2">
                 <div className="flex flex-col items-center gap-1.5 bg-emerald-400/10 rounded-xl px-2 py-3">
                   <Cell value={codeMack} />
                   <span className="text-sm font-semibold text-emerald-300 text-center">Code Mack</span>
                 </div>
-                <div className="flex flex-col items-center gap-1.5 bg-white/5 rounded-xl px-2 py-3">
+                <div className="flex flex-col items-center gap-1.5 bg-black/20 rounded-xl px-2 py-3">
                   <Cell value={squarespace} />
                   <span className="text-sm text-white/90 text-center">Squarespace</span>
                 </div>
-                <div className="flex flex-col items-center gap-1.5 bg-white/5 rounded-xl px-2 py-3">
+                <div className="flex flex-col items-center gap-1.5 bg-black/20 rounded-xl px-2 py-3">
                   <Cell value={wix} />
                   <span className="text-sm text-white/90 text-center">Wix</span>
                 </div>
