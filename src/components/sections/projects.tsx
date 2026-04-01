@@ -1,17 +1,5 @@
 import { ExternalLink, GitBranch, ArrowRight } from 'lucide-react';
-
-const PROJECTS = [
-  {
-    title: 'Beehive Books',
-    description: 'A full-featured social writing and reading platform. Users can write and publish books, join collaborative writing groups called Hives, participate in book clubs, complete writing challenges, and build reading lists.',
-    tech: ['Next.js', 'TypeScript', 'PostgreSQL', 'Drizzle ORM', 'Stripe', 'TipTap', 'Cloudinary'],
-    liveUrl: 'https://www.beehive-books.app',
-    githubUrl: 'https://github.com/Cremacious/beehive-books',
-    status: 'Live',
-    statusColor: 'text-emerald-300 bg-emerald-400/15',
-    gradient: 'from-sky-500/20 to-emerald-500/10',
-  },
-];
+import { PROJECTS } from '@/lib/projects';
 
 export function Projects() {
   return (
@@ -70,20 +58,34 @@ export function Projects() {
                       <ExternalLink className="w-4 h-4" />
                       View Live
                     </a>
-                    <a
-                      href={githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-5 py-2.5 rounded-full glass text-white text-sm font-semibold hover:bg-white/15 transition-all"
-                    >
-                      <GitBranch className="w-4 h-4" />
-                      GitHub
-                    </a>
+                    {githubUrl && (
+                      <a
+                        href={githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-5 py-2.5 rounded-full glass text-white text-sm font-semibold hover:bg-white/15 transition-all"
+                      >
+                        <GitBranch className="w-4 h-4" />
+                        GitHub
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
             </div>
           ))}
+
+          {PROJECTS.length > 3 && (
+            <div className="text-center">
+              <a
+                href="/projects"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass text-white font-semibold text-sm hover:bg-white/15 transition-all"
+              >
+                See all projects
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+          )}
 
           {/* Placeholder card */}
           <div className="glass-card rounded-3xl p-8 border border-dashed border-white/20 flex flex-col items-center justify-center text-center min-h-48 gap-3">
