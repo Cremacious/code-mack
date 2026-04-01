@@ -33,7 +33,7 @@ export function Hero() {
         </h1>
 
         {/* Subheading */}
-        <p className="text-lg sm:text-xl text-white/70 max-w-2xl mx-auto mb-10 leading-relaxed">
+        <p className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto mb-10 leading-relaxed">
           I build fast, custom, mobile-first websites for Florida businesses and beyond.
           You own the code outright. No templates, no platform lock-in.
         </p>
