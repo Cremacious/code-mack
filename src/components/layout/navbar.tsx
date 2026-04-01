@@ -56,7 +56,7 @@ export function Navbar() {
 
         <button
           onClick={() => setMenuOpen((v) => !v)}
-          className="md:hidden p-2 text-white/70 hover:text-white transition-colors"
+          className="md:hidden p-2 text-white/90 hover:text-white transition-colors"
           aria-label="Toggle menu"
         >
           {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -71,7 +71,7 @@ export function Navbar() {
                 key={href}
                 href={href}
                 onClick={() => setMenuOpen(false)}
-                className="px-4 py-3 text-sm text-white/70 hover:text-white transition-colors rounded-lg hover:bg-white/10"
+                className="px-4 py-3 text-sm text-white/90 hover:text-white transition-colors rounded-lg hover:bg-white/10"
               >
                 {label}
               </a>

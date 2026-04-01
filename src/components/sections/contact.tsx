@@ -145,7 +145,7 @@ export function Contact() {
                     value={form.message}
                     onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
                     placeholder="Tell me about your project! What you need, your timeline, and any other details. The more info you can provide, the better I can understand your needs and provide an accurate quote."
-                    className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/15 text-white placeholder-white/80 focus:outline-none focus:border-white/40 transition-colors resize-none"
+                    className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/15 text-white placeholder-white/80 focus:outline-none focus:border-white/40 transition-colors resize-none text-sm md:text-md"
                   />
                 </div>
 
