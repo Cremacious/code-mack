@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   title: 'Code Mack | Web Developer in Sarasota, FL',
   description: 'Custom websites and web apps built by Chris Mackall, a full-stack developer based in Sarasota, Florida. Fast, modern, mobile-first.',
   keywords: ['web developer', 'sarasota', 'florida', 'freelance', 'next.js', 'react'],
+  verification: {
+    google: 'f5fy0Q1G2Zj71ada6JQGk2RodnjI3cWbNZNyEVdgcKY',
+  },
   openGraph: {
     title: 'Code Mack | Web Developer in Sarasota, FL',
     description: 'Custom websites and web apps built by Chris Mackall.',
