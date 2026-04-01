@@ -41,7 +41,7 @@ export function Contact() {
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-emerald-300 text-sm font-semibold uppercase tracking-widest mb-3">Contact</p>
+          {/* <p className="text-emerald-300 text-sm font-semibold uppercase tracking-widest mb-3">Contact</p> */}
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Let&apos;s build something.
           </h2>

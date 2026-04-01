@@ -55,9 +55,9 @@ export function Services() {
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-emerald-300 text-sm font-semibold uppercase tracking-widest mb-3">Services</p>
+          {/* <p className="text-emerald-300 text-sm font-semibold uppercase tracking-widest mb-3">Services</p> */}
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            What I Build
+            Services
           </h2>
           <p className="text-white/90 text-lg max-w-xl mx-auto">
             Every project is built from scratch, designed to perform, and handed over to you. No ongoing platform fees.

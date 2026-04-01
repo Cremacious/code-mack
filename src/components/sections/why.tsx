@@ -58,9 +58,9 @@ export function Why() {
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-emerald-300 text-sm font-semibold uppercase tracking-widest mb-3">
+          {/* <p className="text-emerald-300 text-sm font-semibold uppercase tracking-widest mb-3">
             Why Code Mack
-          </p>
+          </p> */}
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Stop renting your website.
           </h2>

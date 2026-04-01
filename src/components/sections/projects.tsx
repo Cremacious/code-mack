@@ -8,7 +8,7 @@ export function Projects() {
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-emerald-300 text-sm font-semibold uppercase tracking-widest mb-3">Projects</p>
+          {/* <p className="text-emerald-300 text-sm font-semibold uppercase tracking-widest mb-3">Projects</p> */}
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">My Work</h2>
           <p className="text-white/90 text-lg max-w-xl mx-auto">
             Real projects built with real technology. More coming soon.
