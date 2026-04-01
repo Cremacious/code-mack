@@ -1,0 +1,100 @@
+import { ExternalLink, GitBranch, ArrowRight } from 'lucide-react';
+
+const PROJECTS = [
+  {
+    title: 'Beehive Books',
+    description: 'A full-featured social writing and reading platform. Users can write and publish books, join collaborative writing groups called Hives, participate in book clubs, complete writing challenges, and build reading lists.',
+    tech: ['Next.js', 'TypeScript', 'PostgreSQL', 'Drizzle ORM', 'Stripe', 'TipTap', 'Cloudinary'],
+    liveUrl: 'https://www.beehive-books.app',
+    githubUrl: 'https://github.com/Cremacious/beehive-books',
+    status: 'Live',
+    statusColor: 'text-emerald-300 bg-emerald-400/15',
+    gradient: 'from-sky-500/20 to-emerald-500/10',
+  },
+];
+
+export function Projects() {
+  return (
+    <section id="projects" className="py-24 relative">
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <p className="text-emerald-300 text-sm font-semibold uppercase tracking-widest mb-3">Projects</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">My Work</h2>
+          <p className="text-white/90 text-lg max-w-xl mx-auto">
+            Real projects built with real technology. More coming soon.
+          </p>
+        </div>
+
+        {/* Project cards */}
+        <div className="space-y-6">
+          {PROJECTS.map(({ title, description, tech, liveUrl, githubUrl, status, statusColor, gradient }) => (
+            <div
+              key={title}
+              className="glass-card rounded-3xl p-8 hover:-translate-y-0.5 transition-all group"
+            >
+              <div className="flex flex-col lg:flex-row gap-8">
+                {/* Preview placeholder */}
+                <div className={`lg:w-80 shrink-0 rounded-2xl bg-linear-to-br ${gradient} border border-white/10 flex items-center justify-center min-h-48 lg:min-h-0`}>
+                  <p className="text-white/90 text-sm">Screenshot coming soon</p>
+                </div>
+
+                {/* Info */}
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-start justify-between gap-4 mb-3 flex-wrap">
+                    <h3 className="text-2xl font-bold text-white">{title}</h3>
+                    <span className={`px-3 py-1 rounded-full text-xs font-semibold ${statusColor}`}>
+                      {status}
+                    </span>
+                  </div>
+
+                  <p className="text-white/90 leading-relaxed mb-6">{description}</p>
+
+                  {/* Tech stack */}
+                  <div className="flex flex-wrap gap-2 mb-8">
+                    {tech.map((t) => (
+                      <span key={t} className="px-3 py-1 rounded-full glass text-white/90 text-xs font-medium">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Links */}
+                  <div className="flex items-center gap-4">
+                    <a
+                      href={liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-sky-700 text-sm font-bold hover:bg-white/90 transition-all"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      View Live
+                    </a>
+                    <a
+                      href={githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-5 py-2.5 rounded-full glass text-white text-sm font-semibold hover:bg-white/15 transition-all"
+                    >
+                      <GitBranch className="w-4 h-4" />
+                      GitHub
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+
+          {/* Placeholder card */}
+          <div className="glass-card rounded-3xl p-8 border border-dashed border-white/20 flex flex-col items-center justify-center text-center min-h-48 gap-3">
+            <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center">
+              <ArrowRight className="w-6 h-6 text-white/90" />
+            </div>
+            <p className="text-white/90 font-medium">More projects coming soon</p>
+            <p className="text-white/90 text-sm max-w-xs">Check back as new work gets added here.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

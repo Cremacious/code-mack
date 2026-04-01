@@ -27,7 +27,7 @@ export function Hero() {
         {/* Heading */}
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white leading-tight tracking-tight mb-6 drop-shadow-lg">
           Websites built{' '}
-          <span className="text-emerald-300">to last,</span>
+          <span className="text-emerald-300">to last</span>,
           <br />
           not rented.
         </h1>
