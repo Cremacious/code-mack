@@ -101,7 +101,7 @@ export function Contact() {
                   <Send className="w-7 h-7 text-emerald-300" />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-2">Message sent!</h3>
-                <p className="text-white/60">Thanks for reaching out. I&apos;ll be in touch within 24 hours.</p>
+                <p className="text-white/90">Thanks for reaching out. I&apos;ll be in touch within 24 hours.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="glass-card rounded-3xl p-8 space-y-5">
