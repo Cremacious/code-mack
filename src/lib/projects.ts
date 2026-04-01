@@ -26,7 +26,7 @@ export const PROJECTS: Project[] = [
     title: 'Admin Dashboard',
     description: 'A clean, responsive admin dashboard featuring order management, data tables, and real-time status tracking. Demonstrates the kind of internal tooling and business dashboards I can build for clients.',
     tech: ['Vite', 'TypeScript', 'Tailwind CSS', 'Recharts'],
-    liveUrl: 'https://admin-display-mu.vercel.app/orders',
+    liveUrl: 'https://admin-display-mu.vercel.app',
     githubUrl: null,
     status: 'Demo',
     statusColor: 'text-sky-300 bg-sky-400/15',
