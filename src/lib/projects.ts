@@ -7,6 +7,7 @@ export type Project = {
   status: string;
   statusColor: string;
   gradient: string;
+  imagePath: string;
 };
 
 export const PROJECTS: Project[] = [
@@ -19,6 +20,7 @@ export const PROJECTS: Project[] = [
     status: 'Live',
     statusColor: 'text-emerald-300 bg-emerald-400/15',
     gradient: 'from-sky-500/20 to-emerald-500/10',
+    imagePath: '/images/portfolio/beehive.png',
   },
   {
     title: 'Admin Dashboard',
@@ -29,5 +31,6 @@ export const PROJECTS: Project[] = [
     status: 'Demo',
     statusColor: 'text-sky-300 bg-sky-400/15',
     gradient: 'from-sky-500/15 to-indigo-500/10',
+    imagePath: '/images/portfolio/dashboard.png',
   },
 ];

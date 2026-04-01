@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { ExternalLink, GitBranch, ArrowRight } from 'lucide-react';
 import { PROJECTS } from '@/lib/projects';
 
@@ -16,15 +17,21 @@ export function Projects() {
 
         {/* Project cards */}
         <div className="space-y-6">
-          {PROJECTS.map(({ title, description, tech, liveUrl, githubUrl, status, statusColor, gradient }) => (
+          {PROJECTS.map(({ title, description, tech, liveUrl, githubUrl, status, statusColor, imagePath }) => (
             <div
               key={title}
               className="glass-card rounded-3xl p-8 hover:-translate-y-0.5 transition-all group"
             >
               <div className="flex flex-col lg:flex-row gap-8">
-                {/* Preview placeholder */}
-                <div className={`lg:w-80 shrink-0 rounded-2xl bg-linear-to-br ${gradient} border border-white/10 flex items-center justify-center min-h-48 lg:min-h-0`}>
-                  <p className="text-white/90 text-sm">Screenshot coming soon</p>
+                {/* Preview */}
+                <div className="lg:w-80 shrink-0 rounded-2xl overflow-hidden border border-white/10 aspect-video lg:aspect-auto lg:h-48">
+                  <Image
+                    src={imagePath}
+                    alt={title}
+                    width={480}
+                    height={270}
+                    className="w-full h-full object-cover object-top"
+                  />
                 </div>
 
                 {/* Info */}
