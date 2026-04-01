@@ -37,7 +37,7 @@ export function Contact() {
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Let&apos;s build something.
           </h2>
-          <p className="text-white/60 text-lg max-w-xl mx-auto">
+          <p className="text-white/90 text-lg max-w-xl mx-auto">
             Tell me about your project and I&apos;ll get back to you within 24 hours.
           </p>
         </div>
@@ -51,8 +51,8 @@ export function Contact() {
               </div>
               <div>
                 <p className="text-white font-semibold text-sm">Based in</p>
-                <p className="text-white/60 text-sm mt-0.5">Sarasota, Florida</p>
-                <p className="text-white/40 text-xs mt-0.5">Available for local and remote work</p>
+                <p className="text-white/90 text-sm mt-0.5">Sarasota, Florida</p>
+                <p className="text-white/80 text-xs mt-0.5">Available for local and remote work</p>
               </div>
             </div>
 
@@ -62,14 +62,14 @@ export function Contact() {
               </div>
               <div>
                 <p className="text-white font-semibold text-sm">Response time</p>
-                <p className="text-white/60 text-sm mt-0.5">Within 24 hours</p>
-                <p className="text-white/40 text-xs mt-0.5">Usually much faster</p>
+                <p className="text-white/90 text-sm mt-0.5">Within 24 hours</p>
+                <p className="text-white/80 text-xs mt-0.5">Or 1 Business Day</p>
               </div>
             </div>
 
             <div className="glass-card rounded-2xl p-6">
-              <p className="text-white/50 text-xs uppercase tracking-widest font-medium mb-3">Free quote includes</p>
-              <ul className="space-y-2 text-sm text-white/70">
+              <p className="text-white/90 text-xs uppercase tracking-widest font-medium mb-3">Free quote includes</p>
+              <ul className="space-y-2 text-sm text-white/90">
                 {[
                   'Project timeline estimate',
                   'Itemized pricing breakdown',
@@ -99,31 +99,31 @@ export function Contact() {
               <form onSubmit={handleSubmit} className="glass-card rounded-3xl p-8 space-y-5">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-sm font-medium text-white/70 mb-2">Name</label>
+                    <label className="block text-sm font-medium text-white/90 mb-2">Name</label>
                     <input
                       type="text"
                       required
                       value={form.name}
                       onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
                       placeholder="Your name"
-                      className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/15 text-white placeholder-white/30 focus:outline-none focus:border-white/40 transition-colors text-sm"
+                      className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/15 text-white placeholder-white/60 focus:outline-none focus:border-white/40 transition-colors text-sm"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-white/70 mb-2">Email</label>
+                    <label className="block text-sm font-medium text-white/90 mb-2">Email</label>
                     <input
                       type="email"
                       required
                       value={form.email}
                       onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
                       placeholder="your@email.com"
-                      className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/15 text-white placeholder-white/30 focus:outline-none focus:border-white/40 transition-colors text-sm"
+                      className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/15 text-white placeholder-white/60 focus:outline-none focus:border-white/40 transition-colors text-sm"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-white/70 mb-2">Project Type</label>
+                  <label className="block text-sm font-medium text-white/90 mb-2">Project Type</label>
                   <select
                     required
                     value={form.projectType}
@@ -138,14 +138,14 @@ export function Contact() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-white/70 mb-2">Message</label>
+                  <label className="block text-sm font-medium text-white/90 mb-2">Message</label>
                   <textarea
                     required
                     rows={5}
                     value={form.message}
                     onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
-                    placeholder="Tell me about your project — what you need, your timeline, and any other details..."
-                    className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/15 text-white placeholder-white/30 focus:outline-none focus:border-white/40 transition-colors text-sm resize-none"
+                    placeholder="Tell me about your project! What you need, your timeline, and any other details. The more info you can provide, the better I can understand your needs and provide an accurate quote."
+                    className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/15 text-white placeholder-white/80 focus:outline-none focus:border-white/40 transition-colors resize-none"
                   />
                 </div>
 
