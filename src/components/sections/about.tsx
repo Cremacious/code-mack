@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { Laptop, MapPin, Calendar } from 'lucide-react';
 
 export function About() {
@@ -8,6 +9,15 @@ export function About() {
 
           {/* Left — text */}
           <div>
+            <div className="w-32 h-32 rounded-3xl overflow-hidden border-2 border-white/20 mb-8 mx-auto lg:mx-0">
+              <Image
+                src="/images/profile.jpg"
+                alt="Chris Mackall"
+                width={128}
+                height={128}
+                className="w-full h-full object-cover"
+              />
+            </div>
             <p className="text-emerald-300 text-sm font-semibold uppercase tracking-widest mb-3">About Me</p>
             <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
               Hi, I&apos;m Chris Mackall.

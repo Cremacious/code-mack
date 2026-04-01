@@ -17,7 +17,7 @@ export function Projects() {
 
         {/* Project cards */}
         <div className="space-y-6">
-          {PROJECTS.map(({ title, description, tech, liveUrl, githubUrl, status, statusColor, imagePath }) => (
+          {PROJECTS.map(({ title, description, tech, liveUrl, githubUrl, status, statusColor, imagePath }, index) => (
             <div
               key={title}
               className="glass-card rounded-3xl p-8 hover:-translate-y-0.5 transition-all group"
@@ -31,6 +31,7 @@ export function Projects() {
                     width={480}
                     height={270}
                     className="w-full h-full object-cover object-top"
+                    priority={index === 0}
                   />
                 </div>
 
