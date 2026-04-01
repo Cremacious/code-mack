@@ -23,9 +23,17 @@ export function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('sending');
-    // TODO: wire up to an email service (Resend, Formspree, etc.)
-    await new Promise((r) => setTimeout(r, 1000));
-    setStatus('sent');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error('Failed');
+      setStatus('sent');
+    } catch {
+      setStatus('error');
+    }
   };
 
   return (
@@ -166,6 +174,12 @@ export function Contact() {
                     </>
                   )}
                 </button>
+
+                {status === 'error' && (
+                  <p className="text-red-400 text-sm text-center">
+                    Something went wrong. Please try again or email me directly.
+                  </p>
+                )}
               </form>
             )}
           </div>
