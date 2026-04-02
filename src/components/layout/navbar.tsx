@@ -65,14 +65,14 @@ export function Navbar() {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden glass border-t border-white/20">
+        <div className="md:hidden bg-sky-900/90 backdrop-blur-md border-t border-white/20">
           <nav className="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-1">
             {NAV_LINKS.map(({ label, href }) => (
               <a
                 key={href}
                 href={href}
                 onClick={() => setMenuOpen(false)}
-                className="px-4 py-3 text-sm text-white/90 hover:text-white transition-colors rounded-lg hover:bg-white/10"
+                className="px-4 py-3 text-base text-white font-bold font-sans hover:text-white transition-colors rounded-lg hover:bg-white/15"
               >
                 {label}
               </a>
