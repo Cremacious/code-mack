@@ -3,7 +3,7 @@ import { Laptop, MapPin, Calendar } from 'lucide-react';
 
 export function About() {
   return (
-    <section id="about" className="py-24 relative">
+    <section id="about" className="py-16 relative">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
@@ -30,14 +30,8 @@ export function About() {
             </p>
 
             {/* Stats */}
-            <div className="flex flex-wrap gap-4">
-              <div className="glass-card rounded-2xl px-5 py-4 flex items-center gap-3">
-                <Calendar className="w-5 h-5 text-emerald-300 shrink-0" />
-                <div>
-                  <p className="text-white font-semibold text-sm">Since 2022</p>
-                  <p className="text-white/90 text-xs">Self-taught developer</p>
-                </div>
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
+           
               <div className="glass-card rounded-2xl px-5 py-4 flex items-center gap-3">
                 <MapPin className="w-5 h-5 text-emerald-300 shrink-0" />
                 <div>
