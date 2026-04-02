@@ -100,8 +100,8 @@ export function Projects() {
             <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center">
               <ArrowRight className="w-6 h-6 text-white/90" />
             </div>
-            <p className="text-white/90 font-medium">More projects coming soon</p>
-            <p className="text-white/90 text-sm max-w-xs">Check back as new work gets added here.</p>
+            <p className="text-white/90 font-medium">More coming soon</p>
+            <p className="text-white/90 text-sm max-w-xs">New projects and client work added regularly.</p>
           </div>
         </div>
       </div>
