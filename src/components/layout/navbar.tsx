@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
 const NAV_LINKS = [
   { label: 'About', href: '#about' },
@@ -33,8 +34,14 @@ export function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-          <span className="text-emerald-300 font-bold text-base font-mono">&lt;/&gt;</span>
-          <span className="text-lg font-bold text-white tracking-tight">Code://Mack</span>
+          <Image
+            src="/images/logo-cropped.png"
+            alt="Code Mack"
+            width={120}
+            height={40}
+            className="h-6 w-auto object-contain"
+            priority
+          />
         </a>
 
         <nav className="hidden md:flex items-center gap-1">

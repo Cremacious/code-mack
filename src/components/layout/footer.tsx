@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export function Footer() {
   const year = new Date().getFullYear();
   return (
@@ -6,8 +8,13 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <div className="flex items-center gap-2">
-              <span className="text-emerald-300 font-bold text-base font-mono">&lt;/&gt;</span>
-              <span className="text-lg font-bold text-white">Code://Mack</span>
+              <Image
+                src="/images/logo-cropped.png"
+                alt="Code Mack"
+                width={100}
+                height={30}
+                className="h-6 w-auto object-contain"
+              />
             </div>
             <p className="text-sm text-white/90 mt-1">Custom web development in Sarasota, FL</p>
           </div>
