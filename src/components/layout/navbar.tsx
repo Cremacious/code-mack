@@ -34,14 +34,19 @@ export function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-          <Image
+          <div className='text-2xl font-bold'>
+            <span className='text-emerald-300'>{'<'}</span>
+            CODE://MACK
+                   <span className='text-emerald-300'>{'/>'}</span>
+          </div>
+          {/* <Image
             src="/images/logo-cropped.png"
             alt="Code Mack"
             width={120}
             height={40}
             className="h-6 w-auto object-contain"
             priority
-          />
+          /> */}
         </a>
 
         <nav className="hidden md:flex items-center gap-1">

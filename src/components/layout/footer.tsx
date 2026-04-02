@@ -8,19 +8,30 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <div className="flex items-center gap-2">
-              <Image
+              <div className="text-2xl font-bold">
+                <span className="text-emerald-300">{'<'}</span>
+                CODE://MACK
+                <span className="text-emerald-300">{'/>'}</span>
+              </div>
+              {/* <Image
                 src="/images/logo-cropped.png"
                 alt="Code Mack"
                 width={100}
                 height={30}
                 className="h-6 w-auto object-contain"
-              />
+              /> */}
             </div>
-            <p className="text-sm text-white/90 mt-1">Custom web development in Sarasota, FL</p>
+            <p className="text-sm text-white/90 mt-1">
+              Custom web development in Sarasota, FL
+            </p>
           </div>
           <nav className="flex items-center gap-6">
             {['#about', '#services', '#projects', '#contact'].map((href) => (
-              <a key={href} href={href} className="text-sm text-white/90 hover:text-white transition-colors capitalize">
+              <a
+                key={href}
+                href={href}
+                className="text-sm text-white/90 hover:text-white transition-colors capitalize"
+              >
                 {href.replace('#', '')}
               </a>
             ))}
