@@ -14,7 +14,6 @@ const SERVICES = [
       'Contact form',
       'SEO optimized',
       'Domain name included',
-      'Faster to build when you provide your own copy and images',
     ],
     note: null,
     accent: 'text-sky-300',

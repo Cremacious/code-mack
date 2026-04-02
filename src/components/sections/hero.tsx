@@ -2,7 +2,7 @@ import { ArrowDown, Code2 } from 'lucide-react';
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
       {/* Sky blue background with depth gradient */}
       <div className="absolute inset-0 bg-linear-to-b from-[#0C4A6E] via-[#0369A1] to-[#0284C7]" />
 
