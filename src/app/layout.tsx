@@ -1,11 +1,17 @@
 import type { Metadata } from 'next';
-import { Nunito } from 'next/font/google';
+import { Nunito, Outfit } from 'next/font/google';
 import './globals.css';
 
 const nunito = Nunito({
   variable: '--font-sans',
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '800', '900'],
+});
+
+const outfit = Outfit({
+  variable: '--font-outfit',
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
 });
 
 export const metadata: Metadata = {
@@ -31,7 +37,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${nunito.variable} antialiased`}>
+      <body className={`${nunito.variable} ${outfit.variable} antialiased`}>
         {children}
       </body>
     </html>

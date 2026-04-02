@@ -9,7 +9,7 @@ export function Projects() {
         {/* Header */}
         <div className="text-center mb-16">
           {/* <p className="text-emerald-300 text-sm font-semibold uppercase tracking-widest mb-3">Projects</p> */}
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 font-(family-name:--font-outfit)">
             My Work
           </h2>
           <p className="text-white/90 text-lg max-w-xl mx-auto">

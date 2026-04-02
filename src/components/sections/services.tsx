@@ -56,7 +56,7 @@ export function Services() {
         {/* Header */}
         <div className="text-center mb-16">
           {/* <p className="text-emerald-300 text-sm font-semibold uppercase tracking-widest mb-3">Services</p> */}
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 font-(family-name:--font-outfit)">
             Services
           </h2>
           <p className="text-white/90 text-lg max-w-xl mx-auto">
@@ -124,7 +124,7 @@ export function Services() {
             </div>
           </div>
           <div className="text-center shrink-0">
-            <p className="text-3xl font-bold text-sky-300">$25<span className="text-lg text-white/90">/mo</span></p>
+            <p className="text-3xl font-bold text-sky-300"> <span className='text-white/90 text-[20px]'>Starts at </span>$25<span className="text-lg text-white/90">/mo</span></p>
             <p className="text-white/90 text-xs mt-1">Cancel anytime</p>
           </div>
         </div>

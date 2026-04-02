@@ -19,7 +19,7 @@ export function About() {
               />
             </div>
             <p className="text-emerald-300 text-sm font-semibold uppercase tracking-widest mb-3">About Me</p>
-            <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6 font-(family-name:--font-outfit)">
               Hi, I&apos;m Chris Mackall.
             </h2>
             <p className="text-white/90 text-lg leading-relaxed mb-6">

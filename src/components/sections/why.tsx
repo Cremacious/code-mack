@@ -61,7 +61,7 @@ export function Why() {
           {/* <p className="text-emerald-300 text-sm font-semibold uppercase tracking-widest mb-3">
             Why Code Mack
           </p> */}
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 font-(family-name:--font-outfit)">
             Stop renting your website.
           </h2>
           <p className="text-white/90 text-lg max-w-2xl mx-auto">
