@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Nunito, Outfit } from 'next/font/google';
 import './globals.css';
+import { ScrollToTop } from '@/components/ScrollToTop';
 
 const nunito = Nunito({
   variable: '--font-sans',
@@ -38,6 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${nunito.variable} ${outfit.variable} antialiased`}>
+        <ScrollToTop />
         {children}
       </body>
     </html>
