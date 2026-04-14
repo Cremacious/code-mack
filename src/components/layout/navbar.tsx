@@ -28,7 +28,7 @@ export function Navbar() {
       className={cn(
         'fixed top-0 inset-x-0 z-50',
         scrolled
-          ? 'bg-white/10 backdrop-blur-md'
+          ? 'bg-black/30 backdrop-blur-md border-b border-white/10'
           : 'bg-transparent'
       )}
     >
@@ -61,7 +61,7 @@ export function Navbar() {
           ))}
           <a
             href="#contact"
-            className="ml-3 px-4 py-2 rounded-full bg-white text-sky-700 text-sm font-bold hover:bg-white/90 transition-colors shadow-sm"
+            className="ml-3 px-4 py-2 rounded-full bg-white text-[#0a1e35] text-sm font-bold hover:bg-white/90 transition-colors shadow-sm"
           >
             Get a Quote
           </a>
@@ -77,7 +77,7 @@ export function Navbar() {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden bg-sky-900/90 backdrop-blur-md border-t border-white/20">
+        <div className="md:hidden bg-[#0a1e35]/95 backdrop-blur-md border-t border-white/10">
           <nav className="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-1">
             {NAV_LINKS.map(({ label, href }) => (
               <a
@@ -92,7 +92,7 @@ export function Navbar() {
             <a
               href="#contact"
               onClick={() => setMenuOpen(false)}
-              className="mt-2 px-4 py-3 rounded-xl bg-white text-sky-700 text-sm font-bold text-center hover:bg-white/90 transition-colors"
+              className="mt-2 px-4 py-3 rounded-xl bg-white text-[#0a1e35] text-sm font-bold text-center hover:bg-white/90 transition-colors"
             >
               Get a Quote
             </a>

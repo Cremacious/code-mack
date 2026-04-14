@@ -60,7 +60,7 @@ export function Contact() {
               <div>
                 <p className="text-white font-semibold text-sm">Based in</p>
                 <p className="text-white/90 text-sm mt-0.5">Sarasota, Florida</p>
-                <p className="text-white/80 text-xs mt-0.5">Available for local and remote work</p>
+                <p className="text-white/90 text-xs mt-0.5">Available for local and remote work</p>
               </div>
             </div>
 
@@ -71,7 +71,7 @@ export function Contact() {
               <div>
                 <p className="text-white font-semibold text-sm">Response time</p>
                 <p className="text-white/90 text-sm mt-0.5">Within 24 hours</p>
-                <p className="text-white/80 text-xs mt-0.5">Or 1 Business Day</p>
+                <p className="text-white/90 text-xs mt-0.5">Or 1 Business Day</p>
               </div>
             </div>
 
@@ -114,7 +114,7 @@ export function Contact() {
                       value={form.name}
                       onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
                       placeholder="Your name"
-                      className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/15 text-white placeholder-white/60 focus:outline-none focus:border-white/40 transition-colors text-sm"
+                      className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/15 text-white placeholder-white/80 focus:outline-none focus:border-white/40 transition-colors text-sm"
                     />
                   </div>
                   <div>
@@ -125,7 +125,7 @@ export function Contact() {
                       value={form.email}
                       onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
                       placeholder="your@email.com"
-                      className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/15 text-white placeholder-white/60 focus:outline-none focus:border-white/40 transition-colors text-sm"
+                      className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/15 text-white placeholder-white/80 focus:outline-none focus:border-white/40 transition-colors text-sm"
                     />
                   </div>
                 </div>

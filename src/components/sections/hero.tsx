@@ -2,10 +2,7 @@ import { ArrowDown, Code2 } from 'lucide-react';
 
 export function Hero() {
   return (
-    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
-      {/* Sky blue background with depth gradient */}
-      <div className="absolute inset-0 bg-linear-to-b from-[#0C4A6E] via-[#0369A1] to-[#0284C7]" />
-
+    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-[#0a1628]">
       {/* Cloud shapes — white blobs, blurred */}
       <div className="absolute top-[15%] left-[10%] w-96 h-32 rounded-full bg-white/8 blur-3xl pointer-events-none" />
       <div className="absolute top-[25%] right-[5%] w-80 h-24 rounded-full bg-white/6 blur-2xl pointer-events-none" />
@@ -14,7 +11,7 @@ export function Hero() {
       <div className="absolute bottom-[30%] right-[15%] w-56 h-20 rounded-full bg-white/6 blur-2xl pointer-events-none" />
 
       {/* Subtle bottom fade to next section */}
-      <div className="absolute bottom-0 inset-x-0 h-32 bg-linear-to-t from-[#0369A1]/60 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 inset-x-0 h-56 bg-linear-to-b from-transparent to-[#0d4060] pointer-events-none" />
 
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-24 text-center">

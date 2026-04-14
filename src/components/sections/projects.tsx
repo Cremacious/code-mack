@@ -8,9 +8,9 @@ export function Projects() {
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="font-outfit text-xs font-semibold tracking-[0.18em] uppercase text-[#a8f0dc] mb-3">
+          {/* <p className="font-outfit text-xs font-semibold tracking-[0.18em] uppercase text-[#a8f0dc] mb-3">
             PORTFOLIO &amp; EXAMPLES
-          </p>
+          </p> */}
           <h2 className="font-outfit text-4xl md:text-5xl font-bold text-white">
             Portfolio &amp; Examples
           </h2>
@@ -18,10 +18,10 @@ export function Projects() {
 
         {/* ─── Live Projects ─────────────────────────────────── */}
         <div className="flex items-center justify-between mb-4">
-          <p className="text-xs font-semibold tracking-[0.18em] uppercase text-white/50 font-outfit">
+          <p className="text-xs font-semibold tracking-[0.18em] uppercase text-white/75 font-outfit">
             LIVE PROJECTS
           </p>
-          <p className="text-xs text-white/40">
+          <p className="text-xs text-white/65">
             {PERSONAL_PROJECTS.length} project{PERSONAL_PROJECTS.length !== 1 ? 's' : ''}
           </p>
         </div>
@@ -57,7 +57,7 @@ export function Projects() {
                   <h3 className="text-2xl font-bold text-white mb-3 font-outfit">
                     {title}
                   </h3>
-                  <p className="text-white/80 leading-relaxed mb-4 text-sm">
+                  <p className="text-white/90 leading-relaxed mb-4 text-sm">
                     {description}
                   </p>
 
@@ -103,10 +103,10 @@ export function Projects() {
         {/* ─── Example Sites ─────────────────────────────────── */}
         <div className="mt-12">
           <div className="flex items-center justify-between mb-4">
-            <p className="text-xs font-semibold tracking-[0.18em] uppercase text-white/50 font-outfit">
+            <p className="text-xs font-semibold tracking-[0.18em] uppercase text-white/75 font-outfit">
               EXAMPLE SITES
             </p>
-            <p className="text-xs text-white/40">
+            <p className="text-xs text-white/65">
               {EXAMPLE_SITES.length} example{EXAMPLE_SITES.length !== 1 ? 's' : ''}
             </p>
           </div>
@@ -135,7 +135,7 @@ export function Projects() {
                   <h3 className="text-lg font-bold text-white mb-2 font-outfit">
                     {title}
                   </h3>
-                  <p className="text-white/75 text-sm leading-relaxed mb-4 flex-1">
+                  <p className="text-white/88 text-sm leading-relaxed mb-4 flex-1">
                     {description}
                   </p>
 

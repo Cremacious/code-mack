@@ -4,6 +4,7 @@ import { Smartphone } from 'lucide-react';
 export function About() {
   return (
     <section id="about" className="py-16 relative">
+      <div className="absolute top-0 inset-x-0 h-24 bg-linear-to-b from-[#0d4060] to-transparent pointer-events-none" />
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Left — photo */}
@@ -33,14 +34,14 @@ export function About() {
             <p className="text-[#a8f0dc] text-lg font-medium mb-6">
               Full-Stack Developer and Web Designer in Sarasota, Florida
             </p>
-            <p className="text-white/80 text-base leading-relaxed mb-4">
+            <p className="text-white/90 text-base leading-relaxed mb-4">
               I&apos;m a full-stack web developer based in Sarasota, Florida,
               building custom websites and web applications for businesses of
               all sizes. From polished landing pages to complete platforms, I
               handle everything from design to deployment so you get a site that
               works as hard as you do.
             </p>
-            <p className="text-white/80 text-base leading-relaxed mb-4">
+            <p className="text-white/90 text-base leading-relaxed mb-4">
               I build fast, modern, mobile-first websites that you own outright.
               No templates, no monthly platform fees, just clean code that
               works.
@@ -48,7 +49,7 @@ export function About() {
 
             <hr className="border-white/10 my-6" />
 
-            <p className="font-outfit text-xs font-semibold tracking-[0.18em] uppercase text-white/60 mb-4">
+            <p className="font-outfit text-xs font-semibold tracking-[0.18em] uppercase text-white/80 mb-4">
               TECHNOLOGIES I WORK WITH
             </p>
             <div className="flex flex-wrap gap-2 mb-6">
