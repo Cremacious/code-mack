@@ -44,7 +44,7 @@ export function Hero() {
             href="#projects"
             className="w-full sm:w-auto px-8 py-4 rounded-full bg-white text-sky-700 font-bold text-base hover:bg-white/90 transition-all hover:scale-105 active:scale-95 shadow-xl shadow-black/20"
           >
-            See My Work
+            See Portfolio and Examples
           </a>
           <a
             href="#contact"
