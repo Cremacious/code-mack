@@ -4,67 +4,71 @@ export type Project = {
   tech: string[];
   liveUrl: string;
   githubUrl: string | null;
-  status: string;
+  status: 'Live' | 'Example';
   statusColor: string;
-  gradient: string;
   imagePath: string;
+  category: 'personal' | 'example';
+  type?: string;
 };
 
-export const PROJECTS: Project[] = [
+// ─── PERSONAL PROJECTS ───────────────────────────────────────────
+// Reorder this array to change display order. Add new objects to add projects.
+export const PERSONAL_PROJECTS: Project[] = [
   {
     title: 'Beehive Books',
     description:
-      'A full-featured social writing and reading platform. Users can write and publish books, join collaborative writing groups called Hives, participate in book clubs, complete writing challenges, and build reading lists.',
-    tech: [
-      'Next.js',
-      'TypeScript',
-      'PostgreSQL',
-      'Drizzle ORM',
-      'Stripe',
-      'TipTap',
-      'Cloudinary',
-    ],
+      'A fully custom online reading and community platform. Users can discover books, track their reading progress, join book clubs, and connect with other readers. Built from scratch with a full backend, database, and authentication system.',
+    tech: ['Next.js', 'TypeScript', 'PostgreSQL', 'Drizzle ORM', 'User Auth', 'Full Stack'],
     liveUrl: 'https://www.beehive-books.app',
     githubUrl: 'https://github.com/Cremacious/beehive-books',
     status: 'Live',
-    statusColor: 'text-emerald-300 bg-emerald-400/15',
-    gradient: 'from-sky-500/20 to-emerald-500/10',
+    statusColor: 'bg-emerald-400/20 text-emerald-300',
     imagePath: '/images/portfolio/beehive.png',
-  },
-  {
-    title: 'Admin Dashboard Example',
-    description:
-      'A fully responsive admin dashboard with live Recharts data visualisations, KPI cards, user and product management tables, order tracking, a multi-tab settings panel, and a sales analytics page.',
-    tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Recharts'],
-    liveUrl: 'https://sales-dashboard-lyart-two.vercel.app',
-    githubUrl: null,
-    status: 'Demo',
-    statusColor: 'text-emerald-300 bg-emerald-400/15',
-    gradient: 'from-indigo-500/15 to-sky-500/10',
-    imagePath: '/images/portfolio/dashboard2.png',
-  },
-  {
-    title: 'Restaurant Example',
-    description:
-      'A multi-page restaurant website for a Gulf Coast seafood concept. Includes a tabbed seasonal menu, reservation form, masonry photo gallery, team and story pages, and a mobile-first responsive layout throughout.',
-    tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Next/Image'],
-    liveUrl: 'https://food-example.vercel.app',
-    githubUrl: null,
-    status: 'Demo',
-    statusColor: 'text-emerald-300 bg-emerald-400/15',
-    gradient: 'from-emerald-500/15 to-green-500/10',
-    imagePath: '/images/portfolio/oleander.png',
-  },
-  {
-    title: 'Portfolio Example',
-    description:
-      'An editorial fine art photography portfolio with a full-bleed hero, CSS masonry gallery with lightbox, series showcase, about page with bio and stats, and a minimal contact form.',
-    tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Next/Image'],
-    liveUrl: 'https://art-portfolio-wheat.vercel.app',
-    githubUrl: null,
-    status: 'Demo',
-    statusColor: 'text-emerald-300 bg-emerald-400/15',
-    gradient: 'from-amber-500/15 to-orange-500/10',
-    imagePath: '/images/portfolio/art-portfolio.png',
+    category: 'personal',
+    type: 'Full Stack Application',
   },
 ];
+
+// ─── EXAMPLE SITES ───────────────────────────────────────────────
+// Reorder this array to change display order. Add new objects to add examples.
+export const EXAMPLE_SITES: Project[] = [
+  {
+    title: 'Admin Dashboard',
+    description:
+      'A fully responsive admin dashboard with live Recharts data visualizations, KPI cards, and a product management table with sorting, order tracking, a multi-tab settings panel, and a data addition workflow.',
+    tech: ['React', 'TanStack', 'TypeScript'],
+    liveUrl: 'https://sales-dashboard-lyart-two.vercel.app',
+    githubUrl: null,
+    status: 'Example',
+    statusColor: 'bg-sky-400/20 text-sky-300',
+    imagePath: '/images/portfolio/dashboard2.png',
+    category: 'example',
+  },
+  {
+    title: 'Restaurant Site',
+    description:
+      'A polished restaurant website with a menu, online reservation form, location info, and a photo gallery. Perfect for any food and hospitality business.',
+    tech: ['Next.js', 'Tailwind CSS', 'Mobile-first'],
+    liveUrl: 'https://food-example.vercel.app',
+    githubUrl: null,
+    status: 'Example',
+    statusColor: 'bg-sky-400/20 text-sky-300',
+    imagePath: '/images/portfolio/oleander.png',
+    category: 'example',
+  },
+  {
+    title: 'Portfolio Site',
+    description:
+      'A clean personal portfolio with a full-screen gallery, about section, contact form, and project showcase. Great for photographers, designers, and creatives.',
+    tech: ['Next.js', 'Tailwind CSS', 'Animations'],
+    liveUrl: 'https://art-portfolio-wheat.vercel.app',
+    githubUrl: null,
+    status: 'Example',
+    statusColor: 'bg-sky-400/20 text-sky-300',
+    imagePath: '/images/portfolio/art-portfolio.png',
+    category: 'example',
+  },
+];
+
+// Combined export for /projects page
+export const ALL_PROJECTS = [...PERSONAL_PROJECTS, ...EXAMPLE_SITES];

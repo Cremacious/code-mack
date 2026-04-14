@@ -5,7 +5,22 @@
   html { scroll-behavior: smooth; }
 
   body {
-    background-color: #0369A1;
+    background: linear-gradient(180deg,
+      #0a1628 0%,
+      #0c2240 8%,
+      #0d3358 16%,
+      #0d4060 24%,
+      #0d4d6e 32%,
+      #0d4d6e 42%,
+      #0c4266 52%,
+      #0b3558 60%,
+      #0a2a4a 68%,
+      #09203c 76%,
+      #08192e 84%,
+      #071422 92%,
+      #060f1a 100%
+    );
+    min-height: 100vh;
     color: #ffffff;
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
@@ -22,16 +37,18 @@
   ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.5); }
 }
 
-.glass {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
+@layer components {
+  .glass {
+    background: rgba(255, 255, 255, 0.11);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
 
-.glass-card {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  .glass-card {
+    background: rgba(255, 255, 255, 0.09);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+  }
 }
