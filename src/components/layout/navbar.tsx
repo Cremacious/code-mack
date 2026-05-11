@@ -97,7 +97,7 @@ export function Navbar() {
           </div>
 
           {menuOpen && (
-            <div className="md:hidden border-t border-white/10 px-5 py-3">
+            <div className="md:hidden border-t border-white/10 px-5 py-3" style={{ background: '#0e8085' }}>
               {NAV_LINKS.map(({ label, href }) => (
                 <a
                   key={href}
