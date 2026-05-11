@@ -1,54 +1,219 @@
 @import "tailwindcss";
 
+:root {
+  --surface:  #b8f3ea;
+  --shallow:  #4dd0c7;
+  --teal:     #16a89e;
+  --reef:     #0c5d68;
+  --deep:     #08323f;
+  --abyss:    #03161e;
+
+  --coral:    #ff8a6b;
+  --sand:     #ffd28a;
+  --seafoam:  #9af0d0;
+  --lime:     #c8f471;
+
+  --text: #ffffff;
+  --text-dim: rgba(255, 255, 255, 0.86);
+  --text-faint: rgba(255, 255, 255, 0.62);
+}
+
 @layer base {
-  * { box-sizing: border-box; }
+  * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
   html { scroll-behavior: smooth; }
 
   body {
-    background: linear-gradient(180deg,
-      #0a1628 0%,
-      #0c2240 8%,
-      #0d3358 16%,
-      #0d4060 24%,
-      #0d4d6e 32%,
-      #0d4d6e 42%,
-      #0c4266 52%,
-      #0b3558 60%,
-      #0a2a4a 68%,
-      #09203c 76%,
-      #08192e 84%,
-      #071422 92%,
-      #060f1a 100%
-    );
-    min-height: 100vh;
-    color: #ffffff;
+    margin: 0;
+    background: #03161e;
+    color: var(--text);
     font-family: var(--font-sans);
-    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    min-height: 100vh;
+    font-weight: 400;
   }
 
-  ::selection {
-    background-color: rgba(255,255,255,0.3);
-    color: white;
-  }
+  ::selection { background: rgba(255, 138, 107, 0.4); color: #fff; }
 
-  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar { width: 8px; }
   ::-webkit-scrollbar-track { background: transparent; }
-  ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.3); border-radius: 99px; }
-  ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.5); }
+  ::-webkit-scrollbar-thumb { background: rgba(154, 240, 208, 0.25); border-radius: 99px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(154, 240, 208, 0.5); }
 }
 
-@layer components {
-  .glass {
-    background: rgba(255, 255, 255, 0.11);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-  }
+/* ── Ocean background (fixed, full-page depth gradient) ── */
+.ocean-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255, 240, 200, 0.18), transparent 60%),
+    linear-gradient(
+      180deg,
+      #5fdcd0 0%,  #2cbcb3 6%,  #14a39a 14%, #0d8c8c 22%, #0a7780 32%,
+      #086571 42%, #06545f 54%, #054550 66%, #043640 78%, #022832 88%,
+      #011a22 96%, #03161e 100%
+    );
+  pointer-events: none;
+}
 
-  .glass-card {
-    background: rgba(255, 255, 255, 0.09);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.16);
+/* ── Typography ── */
+.font-display { font-family: var(--font-outfit); letter-spacing: -0.01em; }
+
+/* ── Glass ── */
+.glass {
+  background: rgba(255, 255, 255, 0.09);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.glass-card {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(14px) saturate(135%);
+  -webkit-backdrop-filter: blur(14px) saturate(135%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+.glass-navbar {
+  background: rgba(8, 50, 63, 0.35);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 32px -12px rgba(0, 0, 0, 0.35);
+}
+
+/* ── Reveal on scroll ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+.reveal-left  { transform: translateX(-48px); }
+.reveal-right { transform: translateX(48px); }
+.reveal-left.is-visible,
+.reveal-right.is-visible { transform: translateX(0); }
+.reveal-scale { transform: scale(0.94); }
+.reveal-scale.is-visible { transform: scale(1); }
+
+/* ── Bubbles ── */
+@keyframes rise {
+  0%   { transform: translate(0, 0) scale(0.8); opacity: 0; }
+  10%  { opacity: var(--b-op, 0.45); }
+  50%  { transform: translate(8px, -50vh) scale(1); }
+  90%  { opacity: var(--b-op, 0.45); }
+  100% { transform: translate(-6px, -110vh) scale(0.9); opacity: 0; }
+}
+.bubble {
+  position: absolute;
+  bottom: -40px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.85), rgba(255,255,255,0.15) 60%, transparent 75%);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  animation: rise var(--b-dur, 14s) linear infinite;
+  animation-delay: var(--b-delay, 0s);
+  pointer-events: none;
+  filter: blur(0.3px);
+}
+
+/* ── Kelp / coral fronds ── */
+@keyframes sway {
+  0%, 100% { transform: rotate(-3deg) translateY(0); }
+  50%      { transform: rotate(3deg)  translateY(-6px); }
+}
+.frond { animation: sway 7s ease-in-out infinite; transform-origin: bottom center; }
+.frond.slow { animation-duration: 11s; }
+.frond.fast { animation-duration: 5s; }
+
+/* ── Light rays ── */
+@keyframes raySweep {
+  0%, 100% { transform: translateX(-4%) rotate(-8deg); opacity: 0.35; }
+  50%      { transform: translateX(4%)  rotate(-6deg); opacity: 0.55; }
+}
+.ray {
+  position: absolute;
+  top: -10%;
+  width: 12vw;
+  height: 130%;
+  background: linear-gradient(180deg, rgba(255, 250, 210, 0.28), rgba(255, 250, 210, 0));
+  filter: blur(8px);
+  mix-blend-mode: screen;
+  animation: raySweep 9s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* ── Plankton ── */
+@keyframes drift {
+  0%   { transform: translate(0, 0); }
+  100% { transform: translate(var(--dx, 30px), var(--dy, -120px)); }
+}
+.plankton {
+  position: absolute;
+  width: 3px; height: 3px;
+  border-radius: 50%;
+  background: rgba(200, 255, 240, 0.65);
+  box-shadow: 0 0 6px rgba(180, 255, 230, 0.7);
+  animation: drift var(--p-dur, 20s) linear infinite alternate;
+  pointer-events: none;
+}
+
+/* ── Fish silhouettes ── */
+@keyframes swim {
+  0%   { transform: translateX(-20vw) translateY(0); }
+  50%  { transform: translateX(40vw)  translateY(-20px); }
+  100% { transform: translateX(120vw) translateY(10px); }
+}
+.fish {
+  position: absolute;
+  animation: swim var(--f-dur, 60s) linear infinite;
+  animation-delay: var(--f-delay, 0s);
+  opacity: 0.32;
+  pointer-events: none;
+  filter: blur(0.5px);
+}
+
+/* ── Wave divider ── */
+.wave-divider {
+  position: absolute;
+  top: 0;
+  inset-inline: 0;
+  width: 100%;
+  height: 80px;
+  display: block;
+}
+
+/* ── Status dot pulse ── */
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.55; transform: scale(1.4); }
+}
+.dot-pulse { animation: pulse-soft 2.4s ease-in-out infinite; }
+
+/* ── Hero "Dive in" indicator ── */
+@keyframes dive {
+  0%, 100% { transform: translateY(0);    opacity: 0.7; }
+  50%      { transform: translateY(10px); opacity: 1;   }
+}
+.dive { animation: dive 2.2s ease-in-out infinite; }
+
+/* ── Surface shimmer (hero top) ── */
+@keyframes shimmer {
+  0%, 100% { opacity: 0.5; transform: scaleY(1); }
+  50%      { opacity: 0.85; transform: scaleY(1.05); }
+}
+.surface-shimmer {
+  position: absolute;
+  top: 0; inset-inline: 0;
+  height: 8px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+  filter: blur(4px);
+  animation: shimmer 4s ease-in-out infinite;
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .bubble, .frond, .ray, .plankton, .fish, .dot-pulse, .dive, .surface-shimmer {
+    animation: none !important;
   }
+  .reveal { transition: opacity 0.3s ease; transform: none !important; }
 }

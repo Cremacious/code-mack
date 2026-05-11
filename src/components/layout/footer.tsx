@@ -1,42 +1,29 @@
-import Image from 'next/image';
-
 export function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="glass border-t border-white/20">
-      <div className="max-w-6xl mx-auto px-6 py-12">
+    <footer className="glass border-t border-white/15 relative">
+      <div className="max-w-6xl mx-auto px-6 py-14">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
-            <div className="flex items-center gap-2">
-              <div className="text-2xl font-bold">
-                <span className="text-emerald-300">{'<'}</span>
-                CODE://MACK
-                <span className="text-emerald-300">{'/>'}</span>
-              </div>
-              {/* <Image
-                src="/images/logo-cropped.png"
-                alt="Code Mack"
-                width={100}
-                height={30}
-                className="h-6 w-auto object-contain"
-              /> */}
+            <div className="font-display font-bold text-2xl tracking-tight">
+              <span style={{ color: 'var(--seafoam)' }}>{'<'}</span>
+              <span className="text-white">CODE</span>
+              <span style={{ color: 'var(--seafoam)' }}>{'://'}</span>
+              <span className="text-white">MACK</span>
+              <span style={{ color: 'var(--seafoam)' }}>{'/>'}</span>
             </div>
-            <p className="text-sm text-white/90 mt-1">
-              Custom web development in Sarasota, FL
-            </p>
+            <p className="text-sm text-white/80 mt-2">Custom web development in Sarasota, FL</p>
           </div>
-          <nav className="flex items-center gap-6">
-            {['#about', '#services', '#projects', '#contact'].map((href) => (
-              <a
-                key={href}
-                href={href}
-                className="text-sm text-white/90 hover:text-white transition-colors capitalize"
-              >
-                {href.replace('#', '')}
+
+          <nav className="flex items-center gap-6 flex-wrap justify-center">
+            {['about', 'projects', 'why', 'contact'].map(s => (
+              <a key={s} href={`#${s}`} className="text-sm text-white/85 hover:text-white capitalize transition-colors">
+                {s}
               </a>
             ))}
           </nav>
-          <p className="text-sm text-white/90">&copy; {year} Chris Mackall</p>
+
+          <p className="text-sm text-white/85">&copy; {year} Chris Mackall</p>
         </div>
       </div>
     </footer>
