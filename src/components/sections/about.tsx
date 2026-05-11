@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { Reveal } from '@/components/Reveal';
-import { WaveDivider, FrondSVG } from '@/components/ambient/ocean-ambient';
+import { WaveDivider } from '@/components/ambient/ocean-ambient';
 
 const SKILLS = [
   'Next.js','React','TypeScript','Tailwind CSS','Node.js',
@@ -19,11 +19,6 @@ export function About() {
   return (
     <section id="about" className="relative py-28">
       <WaveDivider from="rgba(255,255,255,0.08)" to="transparent" flip />
-
-      {/* Coral frond accent — top right */}
-      <div className="absolute pointer-events-none hidden lg:block" style={{ top: '6%', right: '-20px', opacity: 0.55 }}>
-        <div className="frond"><FrondSVG tone="coral" /></div>
-      </div>
 
       <div className="max-w-6xl mx-auto px-6 relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-start">

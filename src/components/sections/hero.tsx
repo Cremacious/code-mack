@@ -1,5 +1,5 @@
 import { Reveal } from '@/components/Reveal';
-import { SurfaceRipple, FrondSVG } from '@/components/ambient/ocean-ambient';
+import { SurfaceRipple } from '@/components/ambient/ocean-ambient';
 
 function CodeIcon() {
   return (
@@ -35,15 +35,6 @@ export function Hero() {
           filter: 'blur(20px)',
         }}
       />
-
-      {/* Kelp frond — bottom left */}
-      <div className="absolute pointer-events-none" style={{ bottom: -20, left: -20, opacity: 0.7 }}>
-        <div className="frond slow"><FrondSVG tone="kelp" /></div>
-      </div>
-      {/* Coral frond — bottom right */}
-      <div className="absolute pointer-events-none" style={{ bottom: -40, right: -10, opacity: 0.6 }}>
-        <div className="frond fast" style={{ transform: 'scaleX(-1)' }}><FrondSVG tone="coral" /></div>
-      </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-32 text-center" style={{ paddingTop: 140 }}>
 

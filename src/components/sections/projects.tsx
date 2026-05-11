@@ -1,20 +1,11 @@
 import Image from 'next/image';
 import { ExternalLink, GitBranch, ArrowRight } from 'lucide-react';
 import { Reveal } from '@/components/Reveal';
-import { FishLayer, FrondSVG } from '@/components/ambient/ocean-ambient';
 import { PERSONAL_PROJECTS, EXAMPLE_SITES } from '@/lib/projects';
 
 export function Projects() {
   return (
     <section id="projects" className="relative py-28">
-      {/* Floating fish school */}
-      <FishLayer />
-
-      {/* Kelp frond — left edge */}
-      <div className="absolute pointer-events-none hidden md:block" style={{ top: '15%', left: '-30px', opacity: 0.45 }}>
-        <div className="frond slow"><FrondSVG tone="kelp" /></div>
-      </div>
-
       <div className="max-w-6xl mx-auto px-6 relative">
 
         <Reveal>
