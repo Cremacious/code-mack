@@ -78,7 +78,7 @@ function Navbar() {
       >
         <div className={`glass-navbar transition-all duration-500 ${scrolled ? 'rounded-2xl' : 'rounded-none border-0'}`}
              style={{
-               background: scrolled ? 'rgba(8, 50, 63, 0.42)' : 'rgba(8, 50, 63, 0.18)',
+               background: scrolled ? 'rgba(8, 37, 84, 0.42)' : 'rgba(8, 37, 84, 0.18)',
                borderRadius: scrolled ? 18 : 0,
                margin: scrolled ? '0 8px' : 0,
              }}>
@@ -156,14 +156,6 @@ function Hero() {
         filter: 'blur(20px)',
       }} />
 
-      {/* Decorative coral/kelp at corners */}
-      <div className="absolute pointer-events-none" style={{ bottom: -20, left: -20, opacity: 0.7 }}>
-        <div className="frond slow"><FrondSVG tone="kelp" /></div>
-      </div>
-      <div className="absolute pointer-events-none" style={{ bottom: -40, right: -10, opacity: 0.6 }}>
-        <div className="frond fast" style={{ transform: 'scaleX(-1)' }}><FrondSVG tone="coral" /></div>
-      </div>
-
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-32 text-center" style={{ paddingTop: 140 }}>
         <Reveal>
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-white text-[13px] font-semibold mb-8"
@@ -198,7 +190,7 @@ function Hero() {
                className="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-base transition-all hover:scale-[1.04] active:scale-[0.97]"
                style={{
                  background: 'linear-gradient(135deg, #ffffff 0%, #f4f9ff 100%)',
-                 color: '#0c5d68',
+                 color: '#0c3f8c',
                  boxShadow: '0 14px 36px -10px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.4) inset',
                }}>
               See Portfolio and Examples
@@ -211,10 +203,25 @@ function Hero() {
         </Reveal>
 
         <Reveal delay={500}>
-          <div className="mt-20 flex flex-col items-center gap-2 dive">
-            <span className="text-white/70 text-xs tracking-[0.3em] uppercase font-semibold">Dive in</span>
+          <a href="#about"
+             onClick={(e) => {
+               e.preventDefault();
+               const target = document.getElementById('about');
+               if (!target) return;
+               const navOffset = 90;
+               const rect = target.getBoundingClientRect();
+               const headingEl = target.querySelector('h2');
+               const headingRect = headingEl ? headingEl.getBoundingClientRect() : null;
+               // Center the section heading in the viewport when possible
+               const targetY = headingRect
+                 ? window.scrollY + headingRect.top - (window.innerHeight / 2) + (headingRect.height / 2)
+                 : window.scrollY + rect.top - navOffset;
+               window.scrollTo({ top: Math.max(targetY, 0), behavior: 'smooth' });
+             }}
+             className="mt-20 inline-flex flex-col items-center gap-2 dive text-white/70 hover:text-white transition-colors cursor-pointer">
+            <span className="text-xs tracking-[0.3em] uppercase font-semibold">Dive in</span>
             <Icon.Arrow />
-          </div>
+          </a>
         </Reveal>
       </div>
     </section>
@@ -227,12 +234,6 @@ function About() {
   return (
     <section id="about" data-screen-label="02 About" className="relative py-28">
       <WaveDivider from="rgba(255,255,255,0.08)" to="transparent" flip className="absolute top-0" />
-
-      {/* Coral frond accent */}
-      <div className="absolute pointer-events-none hidden lg:block"
-           style={{ top: '6%', right: '-20px', opacity: 0.55 }}>
-        <div className="frond"><FrondSVG tone="coral" /></div>
-      </div>
 
       <div className="max-w-6xl mx-auto px-6 relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-start">
@@ -251,12 +252,6 @@ function About() {
                      background: 'radial-gradient(ellipse at top, rgba(255, 240, 200, 0.18), transparent 60%)',
                      mixBlendMode: 'overlay',
                    }} />
-              {/* Status pill */}
-              <div className="absolute bottom-5 left-1/2 -translate-x-1/2 glass-card rounded-full px-4 py-2 flex items-center gap-2 whitespace-nowrap"
-                   style={{ background: 'rgba(8, 50, 63, 0.6)' }}>
-                <span className="w-2 h-2 rounded-full dot-pulse" style={{ background: 'var(--seafoam)', boxShadow: '0 0 8px var(--seafoam)' }} />
-                <span className="text-sm font-semibold text-white">Sarasota, FL · Available now</span>
-              </div>
             </div>
           </Reveal>
 
@@ -266,12 +261,9 @@ function About() {
                style={{ color: 'var(--seafoam)' }}>
               About
             </p>
-            <h2 className="font-display text-4xl lg:text-5xl font-extrabold text-white mb-3 tracking-tight">
+            <h2 className="font-display text-4xl lg:text-5xl font-extrabold text-white mb-6 tracking-tight">
               Hi, I&rsquo;m Chris Mackall.
             </h2>
-            <p className="text-lg font-medium mb-6" style={{ color: 'var(--seafoam)' }}>
-              Full-Stack Developer and Web Designer in Sarasota, Florida
-            </p>
             <p className="text-white/90 text-[15px] leading-[1.75] mb-4">
               I&rsquo;m a full-stack web developer based in Sarasota, Florida,
               building custom websites and web applications for businesses of
@@ -301,7 +293,7 @@ function About() {
             </div>
 
             <div className="glass-card rounded-2xl px-5 py-4 flex items-center gap-3"
-                 style={{ borderColor: 'rgba(154, 240, 208, 0.3)' }}>
+                 style={{ borderColor: 'rgba(143, 212, 255, 0.3)' }}>
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
                    strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--seafoam)', flexShrink: 0 }}>
                 <rect x="5" y="2" width="14" height="20" rx="2"/>

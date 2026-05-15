@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { Reveal } from '@/components/Reveal';
-import { WaveDivider, FrondSVG } from '@/components/ambient/ocean-ambient';
+import { WaveDivider } from '@/components/ambient/ocean-ambient';
 
 const SKILLS = [
   'Next.js','React','TypeScript','Tailwind CSS','Node.js',
@@ -19,11 +19,6 @@ export function About() {
   return (
     <section id="about" className="relative py-28">
       <WaveDivider from="rgba(255,255,255,0.08)" to="transparent" flip />
-
-      {/* Coral frond accent — top right */}
-      <div className="absolute pointer-events-none hidden lg:block" style={{ top: '6%', right: '-20px', opacity: 0.55 }}>
-        <div className="frond"><FrondSVG tone="coral" /></div>
-      </div>
 
       <div className="max-w-6xl mx-auto px-6 relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-start">
@@ -45,17 +40,6 @@ export function About() {
                 className="absolute inset-0 pointer-events-none"
                 style={{ background: 'radial-gradient(ellipse at top, rgba(255, 240, 200, 0.18), transparent 60%)', mixBlendMode: 'overlay' }}
               />
-              {/* Status pill */}
-              <div
-                className="absolute bottom-5 left-1/2 -translate-x-1/2 glass-card rounded-full px-4 py-2 flex items-center gap-2 whitespace-nowrap"
-                style={{ background: 'rgba(8, 50, 63, 0.6)' }}
-              >
-                <span
-                  className="w-2 h-2 rounded-full dot-pulse"
-                  style={{ background: 'var(--seafoam)', boxShadow: '0 0 8px var(--seafoam)' }}
-                />
-                <span className="text-sm font-semibold text-white">Sarasota, FL · Available now</span>
-              </div>
             </div>
           </Reveal>
 
@@ -64,12 +48,9 @@ export function About() {
             <p className="font-display text-xs font-bold tracking-[0.22em] uppercase mb-3" style={{ color: 'var(--seafoam)' }}>
               About
             </p>
-            <h2 className="font-display text-4xl lg:text-5xl font-extrabold text-white mb-3 tracking-tight">
+            <h2 className="font-display text-4xl lg:text-5xl font-extrabold text-white mb-6 tracking-tight">
               Hi, I&rsquo;m Chris Mackall.
             </h2>
-            <p className="text-lg font-medium mb-6" style={{ color: 'var(--seafoam)' }}>
-              Full-Stack Developer and Web Designer in Sarasota, Florida
-            </p>
             <p className="text-white/90 text-[15px] leading-[1.75] mb-4">
               I&rsquo;m a full-stack web developer based in Sarasota, Florida,
               building custom websites and web applications for businesses of
@@ -102,7 +83,7 @@ export function About() {
 
             <div
               className="glass-card rounded-2xl px-5 py-4 flex items-center gap-3"
-              style={{ borderColor: 'rgba(154, 240, 208, 0.3)' }}
+              style={{ borderColor: 'rgba(143, 212, 255, 0.3)' }}
             >
               <MobileIcon />
               <span className="text-white text-sm">

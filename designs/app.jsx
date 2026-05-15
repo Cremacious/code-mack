@@ -1,7 +1,14 @@
 /* Root app — composes everything */
 const { useEffect: __useEffect } = React;
 
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "showBubbles": true,
+  "showPlankton": true,
+  "showLightRays": true
+}/*EDITMODE-END*/;
+
 function App() {
+  const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
   // Subtle parallax: shift bg gradient position based on scroll
   __useEffect(() => {
     let raf = 0;
@@ -25,9 +32,9 @@ function App() {
     <>
       {/* Fixed ambient layers behind the content */}
       <div className="ocean-bg" />
-      <LightRays />
-      <Plankton count={50} />
-      <Bubbles count={26} />
+      {t.showLightRays && <LightRays />}
+      {t.showPlankton && <Plankton count={50} />}
+      {t.showBubbles && <Bubbles count={26} />}
 
       <Navbar />
       <main>
@@ -38,6 +45,16 @@ function App() {
         <Contact />
       </main>
       <Footer />
+
+      <TweaksPanel title="Tweaks">
+        <TweakSection label="Ambient ocean" />
+        <TweakToggle label="Bubbles" value={t.showBubbles}
+                     onChange={(v) => setTweak('showBubbles', v)} />
+        <TweakToggle label="Plankton" value={t.showPlankton}
+                     onChange={(v) => setTweak('showPlankton', v)} />
+        <TweakToggle label="Light rays" value={t.showLightRays}
+                     onChange={(v) => setTweak('showLightRays', v)} />
+      </TweaksPanel>
     </>
   );
 }

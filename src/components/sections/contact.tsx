@@ -83,7 +83,7 @@ export function Contact() {
               <div className="glass-card rounded-2xl p-6 flex items-start gap-4">
                 <div
                   className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
-                  style={{ background: 'rgba(154, 240, 208, 0.16)', color: 'var(--seafoam)' }}
+                  style={{ background: 'rgba(143, 212, 255, 0.16)', color: 'var(--seafoam)' }}
                 >
                   <MapIcon />
                 </div>
@@ -138,7 +138,7 @@ export function Contact() {
                 <div className="glass-card rounded-3xl p-12 flex flex-col items-center justify-center text-center min-h-[420px]">
                   <div
                     className="w-16 h-16 rounded-full flex items-center justify-center mb-6"
-                    style={{ background: 'rgba(154, 240, 208, 0.2)', color: 'var(--seafoam)' }}
+                    style={{ background: 'rgba(143, 212, 255, 0.2)', color: 'var(--seafoam)' }}
                   >
                     <SendIcon />
                   </div>
@@ -159,8 +159,7 @@ export function Contact() {
                         value={form.name}
                         onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
                         placeholder="Your name"
-                        className="w-full px-4 py-3 rounded-xl border border-white/15 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-white/60 transition-all text-sm"
-                        style={{ background: '#ffffff' }}
+                        className="w-full px-4 py-3 rounded-xl bg-white/[0.08] border border-white/15 text-white placeholder-white/55 focus:outline-none focus:border-white/40 focus:bg-white/[0.12] transition-all text-sm"
                       />
                     </Field>
                     <Field label="Email">
@@ -170,8 +169,7 @@ export function Contact() {
                         value={form.email}
                         onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
                         placeholder="your@email.com"
-                        className="w-full px-4 py-3 rounded-xl border border-white/15 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-white/60 transition-all text-sm"
-                        style={{ background: '#ffffff' }}
+                        className="w-full px-4 py-3 rounded-xl bg-white/[0.08] border border-white/15 text-white placeholder-white/55 focus:outline-none focus:border-white/40 focus:bg-white/[0.12] transition-all text-sm"
                       />
                     </Field>
                   </div>
@@ -183,8 +181,7 @@ export function Contact() {
                       value={form.message}
                       onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
                       placeholder="Tell me about your project! What you need, your timeline, and any other details. The more info you can provide, the better I can understand your needs and provide an accurate quote."
-                      className="w-full px-4 py-3 rounded-xl border border-white/15 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-white/60 transition-all resize-none text-sm leading-relaxed"
-                      style={{ background: '#ffffff' }}
+                      className="w-full px-4 py-3 rounded-xl bg-white/[0.08] border border-white/15 text-white placeholder-white/55 focus:outline-none focus:border-white/40 focus:bg-white/[0.12] transition-all resize-none text-sm leading-relaxed"
                     />
                   </Field>
 

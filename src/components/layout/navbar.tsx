@@ -48,7 +48,7 @@ export function Navbar() {
         <div
           className="glass-navbar transition-all duration-500 rounded-2xl"
           style={{
-            background:   scrolled ? 'rgba(8, 50, 63, 0.42)' : 'rgba(8, 50, 63, 0.18)',
+            background:   scrolled ? 'rgba(8, 37, 84, 0.42)' : 'rgba(8, 37, 84, 0.18)',
             borderRadius: 18,
             margin:       scrolled ? '0 8px' : 0,
           }}
@@ -97,7 +97,7 @@ export function Navbar() {
           </div>
 
           {menuOpen && (
-            <div className="md:hidden border-t border-white/10 px-5 py-3" style={{ background: '#0e8085' }}>
+            <div className="md:hidden border-t border-white/10 px-5 py-3">
               {NAV_LINKS.map(({ label, href }) => (
                 <a
                   key={href}

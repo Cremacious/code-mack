@@ -3,17 +3,17 @@
   --font-sans: 'Nunito', system-ui, -apple-system, sans-serif;
   --font-display: 'Outfit', system-ui, -apple-system, sans-serif;
 
-  /* Tropical ocean palette */
-  --surface:  #b8f3ea;   /* sunlit foam */
-  --shallow:  #4dd0c7;   /* turquoise shallows */
-  --teal:     #16a89e;   /* mid-water teal */
-  --reef:     #0c5d68;   /* reef shadow */
-  --deep:     #08323f;   /* deep water */
-  --abyss:    #03161e;   /* abyss */
+  /* Tropical ocean palette — blue */
+  --surface:  #b8e0ff;   /* sunlit foam */
+  --shallow:  #4db0ff;   /* turquoise-blue shallows */
+  --teal:     #1872d6;   /* mid-water blue */
+  --reef:     #0c3f8c;   /* reef shadow */
+  --deep:     #082554;   /* deep water */
+  --abyss:    #03102a;   /* abyss */
 
-  --coral:    #ff8a6b;   /* coral accent */
+  --coral:    #ff8a6b;   /* coral accent (kept warm) */
   --sand:     #ffd28a;   /* sandgold */
-  --seafoam:  #9af0d0;   /* highlight */
+  --seafoam:  #8fd4ff;   /* highlight (now blue) */
   --lime:     #c8f471;   /* anemone bright */
 
   --text: #ffffff;
@@ -27,7 +27,7 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  background: #03161e;
+  background: #03102a;
   color: var(--text);
   font-family: var(--font-sans);
   overflow-x: hidden;
@@ -45,18 +45,18 @@ body {
     radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255, 240, 200, 0.18), transparent 60%),
     linear-gradient(
       180deg,
-      #5fdcd0 0%,
-      #2cbcb3 6%,
-      #14a39a 14%,
-      #0d8c8c 22%,
-      #0a7780 32%,
-      #086571 42%,
-      #06545f 54%,
-      #054550 66%,
-      #043640 78%,
-      #022832 88%,
-      #011a22 96%,
-      #03161e 100%
+      #5fb8ff 0%,
+      #3a9ff0 6%,
+      #1f86dc 14%,
+      #1670c8 22%,
+      #115ab0 32%,
+      #0d4798 42%,
+      #0a3a82 54%,
+      #082e6c 66%,
+      #062354 78%,
+      #041940 88%,
+      #021030 96%,
+      #03102a 100%
     );
   pointer-events: none;
 }
@@ -71,7 +71,7 @@ body {
   opacity: 0.55;
   background:
     radial-gradient(ellipse 30% 70% at 20% 0%, rgba(255, 250, 210, 0.22), transparent 70%),
-    radial-gradient(ellipse 24% 60% at 70% 0%, rgba(180, 255, 240, 0.18), transparent 65%),
+    radial-gradient(ellipse 24% 60% at 70% 0%, rgba(180, 220, 255, 0.18), transparent 65%),
     radial-gradient(ellipse 18% 55% at 88% 5%, rgba(255, 240, 200, 0.14), transparent 65%);
 }
 
@@ -92,7 +92,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.14);
 }
 .glass-navbar {
-  background: rgba(8, 50, 63, 0.35);
+  background: rgba(8, 37, 84, 0.35);
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
@@ -174,8 +174,8 @@ body {
   position: absolute;
   width: 3px; height: 3px;
   border-radius: 50%;
-  background: rgba(200, 255, 240, 0.65);
-  box-shadow: 0 0 6px rgba(180, 255, 230, 0.7);
+  background: rgba(200, 230, 255, 0.7);
+  box-shadow: 0 0 6px rgba(180, 220, 255, 0.75);
   animation: drift var(--p-dur, 20s) linear infinite alternate;
   pointer-events: none;
 }
@@ -214,8 +214,8 @@ body {
 /* ───────── Scrollbar ───────── */
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: rgba(154, 240, 208, 0.25); border-radius: 99px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(154, 240, 208, 0.5); }
+::-webkit-scrollbar-thumb { background: rgba(143, 212, 255, 0.25); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(143, 212, 255, 0.5); }
 
 ::selection { background: rgba(255, 138, 107, 0.4); color: #fff; }
 
@@ -239,6 +239,10 @@ body {
   filter: blur(4px);
   animation: shimmer 4s ease-in-out infinite;
 }
+
+/* Tweak toggles — hide entire decorative layers */
+.hide-fronds .frond { display: none !important; }
+.hide-fish   .fish  { display: none !important; }
 
 /* Reduce motion */
 @media (prefers-reduced-motion: reduce) {

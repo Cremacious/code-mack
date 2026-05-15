@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --surface:  #b8f3ea;
-  --shallow:  #4dd0c7;
-  --teal:     #16a89e;
-  --reef:     #0c5d68;
-  --deep:     #08323f;
-  --abyss:    #03161e;
+  --surface:  #b8e0ff;
+  --shallow:  #4db0ff;
+  --teal:     #1872d6;
+  --reef:     #0c3f8c;
+  --deep:     #082554;
+  --abyss:    #03102a;
 
   --coral:    #ff8a6b;
   --sand:     #ffd28a;
-  --seafoam:  #9af0d0;
+  --seafoam:  #8fd4ff;
   --lime:     #c8f471;
 
   --text: #ffffff;
@@ -24,7 +24,7 @@
 
   body {
     margin: 0;
-    background: #03161e;
+    background: #03102a;
     color: var(--text);
     font-family: var(--font-sans);
     overflow-x: hidden;
@@ -36,8 +36,8 @@
 
   ::-webkit-scrollbar { width: 8px; }
   ::-webkit-scrollbar-track { background: transparent; }
-  ::-webkit-scrollbar-thumb { background: rgba(154, 240, 208, 0.25); border-radius: 99px; }
-  ::-webkit-scrollbar-thumb:hover { background: rgba(154, 240, 208, 0.5); }
+  ::-webkit-scrollbar-thumb { background: rgba(143, 212, 255, 0.25); border-radius: 99px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(143, 212, 255, 0.5); }
 }
 
 /* ── Ocean background (fixed, full-page depth gradient) ── */
@@ -49,9 +49,9 @@
     radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255, 240, 200, 0.18), transparent 60%),
     linear-gradient(
       180deg,
-      #5fdcd0 0%,  #2cbcb3 6%,  #14a39a 14%, #0d8c8c 22%, #0a7780 32%,
-      #086571 42%, #06545f 54%, #054550 66%, #043640 78%, #022832 88%,
-      #011a22 96%, #03161e 100%
+      #5fb8ff 0%,  #3a9ff0 6%,  #1f86dc 14%, #1670c8 22%, #115ab0 32%,
+      #0d4798 42%, #0a3a82 54%, #082e6c 66%, #062354 78%, #041940 88%,
+      #021030 96%, #03102a 100%
     );
   pointer-events: none;
 }
@@ -73,7 +73,7 @@
   border: 1px solid rgba(255, 255, 255, 0.14);
 }
 .glass-navbar {
-  background: rgba(8, 50, 63, 0.35);
+  background: rgba(8, 37, 84, 0.35);
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
@@ -151,8 +151,8 @@
   position: absolute;
   width: 3px; height: 3px;
   border-radius: 50%;
-  background: rgba(200, 255, 240, 0.65);
-  box-shadow: 0 0 6px rgba(180, 255, 230, 0.7);
+  background: rgba(200, 230, 255, 0.7);
+  box-shadow: 0 0 6px rgba(180, 220, 255, 0.75);
   animation: drift var(--p-dur, 20s) linear infinite alternate;
   pointer-events: none;
 }

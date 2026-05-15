@@ -70,9 +70,15 @@ export function Why() {
         <Reveal variant="scale">
           <div
             className="hidden md:block rounded-3xl overflow-hidden glass-card"
-            style={{ boxShadow: '0 30px 80px -30px rgba(0,0,0,0.55)' }}
+            style={{
+              background: 'rgba(4, 25, 64, 0.94)',
+              backdropFilter: 'blur(14px) saturate(135%)',
+              WebkitBackdropFilter: 'blur(14px) saturate(135%)',
+              border: '1px solid rgba(255, 255, 255, 0.18)',
+              boxShadow: '0 30px 80px -30px rgba(0,0,0,0.55)',
+            }}
           >
-            <div className="grid grid-cols-4 border-b border-white/10" style={{ background: 'rgba(8, 50, 63, 0.4)' }}>
+            <div className="grid grid-cols-4 border-b border-white/10" style={{ background: 'rgba(8, 37, 84, 0.97)' }}>
               <div className="p-5" />
               <div className="p-5 text-center border-l border-white/10">
                 <p className="font-display font-bold text-base" style={{ color: 'var(--seafoam)' }}>Code Mack</p>
@@ -93,7 +99,7 @@ export function Why() {
                 <div className="p-4 pl-6 flex items-center">
                   <p className="text-white/95 text-[15px]">{r.feature}</p>
                 </div>
-                <div className="p-4 flex items-center justify-center border-l border-white/10" style={{ background: 'rgba(154, 240, 208, 0.06)' }}>
+                <div className="p-4 flex items-center justify-center border-l border-white/10" style={{ background: 'rgba(143, 212, 255, 0.18)' }}>
                   <Cell v={r.codeMack} />
                 </div>
                 <div className="p-4 flex items-center justify-center border-l border-white/10"><Cell v={r.squarespace} /></div>
@@ -107,10 +113,10 @@ export function Why() {
         <div className="md:hidden space-y-3">
           {COMPARISON.map((r, i) => (
             <Reveal key={r.feature} delay={i * 60}>
-              <div className="glass-card rounded-2xl p-5">
+              <div className="rounded-2xl p-5 border border-white/15" style={{ background: 'rgba(4, 25, 64, 0.94)' }}>
                 <p className="text-sm font-semibold text-white mb-4">{r.feature}</p>
                 <div className="grid grid-cols-3 gap-2">
-                  <div className="flex flex-col items-center gap-1.5 rounded-xl px-2 py-3" style={{ background: 'rgba(154, 240, 208, 0.1)' }}>
+                  <div className="flex flex-col items-center gap-1.5 rounded-xl px-2 py-3" style={{ background: 'rgba(143, 212, 255, 0.1)' }}>
                     <Cell v={r.codeMack} />
                     <span className="text-xs font-semibold text-center" style={{ color: 'var(--seafoam)' }}>Code Mack</span>
                   </div>

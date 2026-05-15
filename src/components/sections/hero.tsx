@@ -1,5 +1,7 @@
+'use client';
+
 import { Reveal } from '@/components/Reveal';
-import { SurfaceRipple, FrondSVG } from '@/components/ambient/ocean-ambient';
+import { SurfaceRipple } from '@/components/ambient/ocean-ambient';
 
 function CodeIcon() {
   return (
@@ -35,15 +37,6 @@ export function Hero() {
           filter: 'blur(20px)',
         }}
       />
-
-      {/* Kelp frond — bottom left */}
-      <div className="absolute pointer-events-none" style={{ bottom: -20, left: -20, opacity: 0.7 }}>
-        <div className="frond slow"><FrondSVG tone="kelp" /></div>
-      </div>
-      {/* Coral frond — bottom right */}
-      <div className="absolute pointer-events-none" style={{ bottom: -40, right: -10, opacity: 0.6 }}>
-        <div className="frond fast" style={{ transform: 'scaleX(-1)' }}><FrondSVG tone="coral" /></div>
-      </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-32 text-center" style={{ paddingTop: 140 }}>
 
@@ -87,7 +80,7 @@ export function Hero() {
               className="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-base transition-all hover:scale-[1.04] active:scale-[0.97]"
               style={{
                 background: 'linear-gradient(135deg, #ffffff 0%, #f4f9ff 100%)',
-                color: '#0c5d68',
+                color: '#0c3f8c',
                 boxShadow: '0 14px 36px -10px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.4) inset',
               }}
             >
@@ -103,10 +96,24 @@ export function Hero() {
         </Reveal>
 
         <Reveal delay={500}>
-          <div className="mt-20 flex flex-col items-center gap-2 dive">
-            <span className="text-white/70 text-xs tracking-[0.3em] uppercase font-semibold">Dive in</span>
+          <a
+            href="#about"
+            onClick={(e) => {
+              e.preventDefault();
+              const target = document.getElementById('about');
+              if (!target) return;
+              const headingEl = target.querySelector('h2');
+              const headingRect = headingEl ? headingEl.getBoundingClientRect() : null;
+              const targetY = headingRect
+                ? window.scrollY + headingRect.top - window.innerHeight / 2 + headingRect.height / 2
+                : window.scrollY + target.getBoundingClientRect().top - 90;
+              window.scrollTo({ top: Math.max(targetY, 0), behavior: 'smooth' });
+            }}
+            className="mt-20 inline-flex flex-col items-center gap-2 dive text-white/70 hover:text-white transition-colors cursor-pointer"
+          >
+            <span className="text-xs tracking-[0.3em] uppercase font-semibold">Dive in</span>
             <ArrowDownIcon />
-          </div>
+          </a>
         </Reveal>
 
       </div>
